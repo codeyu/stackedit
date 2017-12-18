@@ -1,5 +1,5 @@
-StackEdit
-=========
+=======
+# StackEdit
 
 StackEdit is a full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.
 
@@ -39,11 +39,21 @@ Support StackEdit:
  - Online synchronization using Google Drive (multi-accounts) and Dropbox
  - One click publish on Blogger, Dropbox, Gist, GitHub, Google Drive, SSH server, Tumblr, WordPress
 
-### Documentation:
+### Build Setup
 
- - [Hello! document][2]
- - [Developer guide][3]
- - [Theming guide][4]
+``` bash
+# install dependencies
+yarn install
+
+# serve with hot reload at localhost:8080
+yarn start
+
+# build for production with minification
+yarn run build
+
+# build for production and view the bundle analyzer report
+yarn run build --report
+```
 
 > **NOTE:** This page has been written and published with [StackEdit][5].
 

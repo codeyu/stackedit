@@ -1,7 +1,16 @@
-# Pull base image.
-FROM node:0.12-onbuild
+FROM benweet/stackedit-base
 
-# Node base will default the command to `node server.js`.
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
-# Expose port.
-EXPOSE 3000
+COPY package.json /usr/src/app/
+COPY yarn.lock /usr/src/app/
+COPY gulpfile.js /usr/src/app/
+RUN yarn && yarn cache clean
+COPY . /usr/src/app
+ENV NODE_ENV production
+RUN yarn run build
+
+EXPOSE 8080
+
+CMD [ "node", "." ]
